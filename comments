@@ -1,0 +1,37 @@
+src/
+├── app/                   # init приложения, layout, page.tsx
+│   ├── layout.tsx
+│   └── page.tsx
+│
+├── widgets/               # секции лендинга
+│   ├── Hero/
+│   │   ├── ui/Hero.tsx
+│   │   ├── model/mock.ts
+│   │   ├── index.ts
+│   │   └── styles.module.css
+│   │
+│   ├── Features/
+│   │   ├── ui/Features.tsx
+│   │   └── model/mock.ts
+│   │
+│   └── Footer/
+│       └── ui/Footer.tsx
+│
+├── features/              # отдельные интерактивные части
+│   ├── LanguageSwitcher/  # фича для смены языка
+│   │   ├── ui/LanguageSwitcher.tsx
+│   │   └── model/useLanguage.ts
+│   │
+│   └── FeedbackForm/      # форма обратной связи (если есть)
+│       ├── ui/Form.tsx
+│       └── model/useForm.ts
+│
+├── shared/                # общее
+│   ├── ui/                # кнопки, типографика и т.п.
+│   ├── lib/               # i18n, утилиты
+│   ├── mocks/             # общие моковые данные
+│   └── config/            # константы, настройки
+│
+└── locales/               # переводы
+    ├── ru/
+    └── kz/
