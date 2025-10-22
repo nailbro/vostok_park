@@ -1,0 +1,119 @@
+:root {
+    --bg-color: #f3f0e7;
+    --text-color: #1a1a1a;
+    --accent-color: #1a1a1a;
+    --hover-bg: #fff;
+    --border-color: #d8d8d8;
+    --shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.faqSection {
+    background-color: var(--bg-color);
+    padding: 50px 25px;
+    max-width: 100%;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: "Inter", sans-serif;
+}
+
+.title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 35px;
+    color: var(--text-color);
+}
+
+.list {
+    border-top: 1px solid var(--border-color);
+    width: 1000px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.item {
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 18px 0;
+    font-size: 16px;
+    text-align: left;
+    color: var(--text-color);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.question:hover {
+    color: var(--accent-color);
+}
+
+.arrow {
+    transition: transform 0.3s ease;
+}
+
+.open {
+    transform: rotate(180deg);
+}
+
+.answerWrapper {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    padding: 0;
+}
+
+.show {
+    max-height: 120px;
+    padding: 8px 0 18px;
+}
+
+.answer {
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--text-color);
+    opacity: 0.85;
+}
+
+.bottom {
+    text-align: center;
+    margin-top: 40px;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+.button {
+    width: 1000px;
+    margin-top: 14px;
+    background-color: #000;
+    color: white;
+    border: none;
+    padding: 14px 36px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+    color: #000;
+}
+.arrow {
+  width: 20px;
+  height: 20px;
+  color: #000;
+  transition: transform 0.3s ease, color 0.2s ease;
+}
