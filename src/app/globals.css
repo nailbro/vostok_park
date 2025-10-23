@@ -1,0 +1,22 @@
+:root {
+	--osnovnye-yellow: #ffc806;
+	--osnovnye-black: #1e1e1e;
+	--osnovnye-white: #fff;
+	--dopolnitelno-light-yellow: #ffde40;
+	--dopolnitelno-warm-grey: #f3f0e7;
+	--dopolnitelno-dim-grey: #737373;
+}
+:root {
+  --font-family: "Noto Sans", sans-serif;
+  --second-family: "Microsoft YaHei", sans-serif;
+}
+*{
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    margin: 0;
+}
+.container{
+    max-width: 1400px;
+    margin: 0 auto;
+}
