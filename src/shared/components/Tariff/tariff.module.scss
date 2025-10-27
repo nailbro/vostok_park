@@ -1,0 +1,119 @@
+.section {
+    background: #f7f3ec;
+    border-radius: 15px;
+    padding: 30px 39px;
+    text-align: center;
+    background: var(--dopolnitelno-warm-grey);
+}
+
+.title {
+    margin: 30px 0;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 32px;
+    text-align: center;
+    color: var(--osnovnye-black);
+}
+
+.swiper {
+    width: 100%;
+    padding: 70px 0;
+    position: relative;
+    background: #fff;
+
+    :global(.swiper-button-prev),
+    :global(.swiper-button-next) {
+        color: #333;
+        background: #f0ece4;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        transition: 0.3s ease;
+
+        &:hover {
+            background: #e5dfd4;
+        }
+
+        &::after {
+            font-size: 16px;
+            font-weight: bold;
+        }
+    }
+}
+
+.slide {
+    display: flex;
+    justify-content: center;
+}
+
+.imageWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.image {
+    max-width: 650px;
+    height: auto;
+    object-fit: contain;
+}
+
+.tariffs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    margin: 20px 0 30px;
+}
+
+.tariff {
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #222;
+    cursor: pointer;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: #000;
+    }
+}
+
+.active {
+    color: #000;
+    font-weight: 600;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background: #ffcc33;
+        border-radius: 2px;
+    }
+}
+
+.button {
+    width: 100%;
+    display: inline-block;
+    background: #111;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 14px 40px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    margin-top: 30px;
+
+    &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+    color: #000;
+    }
+}

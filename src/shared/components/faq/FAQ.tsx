@@ -3,6 +3,7 @@ import { useState } from "react";
 import styles from "./faq.module.scss";
 import { faqData } from "@/shared/mocks/lang/faqKgz";
 import { useLanguage } from "@/features/context/LanguageContext";
+import Link from "next/link";
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -49,7 +50,9 @@ export default function FAQSection() {
 
       <div className={styles.bottom}>
         <p>{t.bottomText}</p>
+        <Link href="#form">
         <button className={styles.button}>{t.buttonText}</button>
+        </Link>
       </div>
     </section>
   );

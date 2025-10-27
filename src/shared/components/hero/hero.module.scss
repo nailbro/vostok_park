@@ -1,9 +1,24 @@
 .hero{
     background: linear-gradient(141deg, #ffd43c 0%, #ffc806 44.58%, #f4af2f 100%);
     border-radius: 15px;
-    padding: 20px 40px;
+    padding: 20px 10px;
+    position: relative;
+    .content{
+        display: flex;
+    }
     .banner{
-        width: 500px;
-        height: 490px;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+
+    }
+}
+@media(max-width:834px){
+    .hero{
+        .content{
+            display: flex;
+            flex-direction: column;
+        }
     }
 }

@@ -14,12 +14,18 @@ interface DepositVideo {
 }
 
 const videos: DepositVideo[] = [
-  { src: "/videos/qiwi.mp4", thumbnail: "/videos/qiwi.png" },
-  { src: "/videos/mbank.mp4", thumbnail: "/videos/mbank.png" },
-  { src: "/videos/optima.mp4", thumbnail: "/videos/optima.png" },
+  // { src: "/videos/qiwi.mp4", thumbnail: "/videos/qiwi.png" },
+  // { src: "/videos/mbank.mp4", thumbnail: "/videos/mbank.png" },
+  // { src: "/videos/optima.mp4", thumbnail: "/videos/optima.png" },
+  { thumbnail: "/videos/photo.png", src: "/videos/photo.mp4" },
+  { thumbnail: "/videos/control.png", src: "/videos/control.mp4" },
+  { thumbnail: "/videos/photo.png", src: "/videos/control.mp4" },
+  { thumbnail: "/videos/control.png", src: "/videos/control.mp4" },
+  { thumbnail: "/videos/photo.png", src: "/videos/photo.mp4" },
+  { thumbnail: "/videos/control.png", src: "/videos/control.mp4" },
 ];
 
-export default function Cash (){
+export default function Cash() {
   const { lang } = useLanguage();
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
@@ -33,7 +39,7 @@ export default function Cash (){
   };
 
   return (
-    <section className={styles.section}>
+    <section id="3" className={styles.section}>
       <h2 className={styles.title}>
         {lang === "ru" ? "Способы пополнения" : "Толуктоо ыкмалары"}
       </h2>
@@ -45,10 +51,9 @@ export default function Cash (){
 
       <Swiper
         modules={[Pagination]}
-        slidesPerView={2.5}
-        centeredSlides
+        slidesPerView={3}
         spaceBetween={25}
-        loop
+        loop={true}
         pagination={{
           el: `.${styles.pagination}`,
           clickable: true,
@@ -85,7 +90,6 @@ export default function Cash (){
             </div>
           </SwiperSlide>
         ))}
-
         <div className={styles.pagination} />
       </Swiper>
     </section>

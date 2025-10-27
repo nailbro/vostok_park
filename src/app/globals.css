@@ -7,6 +7,15 @@
 	--dopolnitelno-dim-grey: #737373;
 }
 :root {
+    --bg-color: #f3f0e7;
+    --text-color: #1a1a1a;
+    --accent-color: #1a1a1a;
+    --hover-bg: #fff;
+    --border-color: #d8d8d8;
+    --shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+:root {
   --font-family: "Noto Sans", sans-serif;
   --second-family: "Microsoft YaHei", sans-serif;
 }
@@ -19,4 +28,7 @@
 .container{
     max-width: 1400px;
     margin: 0 auto;
+}
+html {
+  scroll-behavior: smooth;
 }

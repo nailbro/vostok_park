@@ -1,10 +1,3 @@
-interface IHeader{
-    advantages:string,
-    tarif:string,
-    cash:string,
-    contacts:string
-}
-
 export const HeaderTrans={
     ru:{
     advantages:"Преимущества",

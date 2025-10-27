@@ -1,22 +1,27 @@
 .footer {
-  background: #1f1f1f;
+  border-bottom: 1px solid var(--osnovnye-black);
+  background: var(--osnovnye-black);
+  border-radius: 10px;
   color: #fff;
   border-radius: 16px;
-  padding: 40px 60px;
-  margin-top: 60px;
+  padding: 20px 17px;
+  margin-top: 20px;
 }
-
-.container {
+.content{
+  display: flex;
+  flex-direction: column;
+}
+.top {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 40px;
 }
 
 .title {
-  font-size: 20px;
-  font-weight: 600;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  color: var(--osnovnye-white);
   margin-bottom: 20px;
 }
 
@@ -53,7 +58,11 @@
   color: #aaa;
 }
 
-/* Соцсети */
+.right {
+  display: flex;
+  gap: 30px;
+}
+
 .socials {
   display: flex;
   gap: 14px;
@@ -81,17 +90,16 @@
   background: #fdd835;
 }
 
-/* Кнопка "Наверх" */
 .toTop {
+  border-radius: 8px;
+  padding: 12px;
+  width: 46px;
+  height: 46px;
   background: #e8e6e0;
   border: none;
-  border-radius: 10px;
-  padding: 12px 20px;
-  font-size: 16px;
-  font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
-  color: #000;
+  background: var(--dopolnitelno-warm-grey);
 }
 
 .toTop:hover {
@@ -99,17 +107,14 @@
   transform: translateY(-2px);
 }
 
-/* Адаптив */
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+@media (max-width: 834px) {
+  .content {
+    display: flex;
+    align-items: start;
   }
 
   .right {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    align-items: start;
   }
 }

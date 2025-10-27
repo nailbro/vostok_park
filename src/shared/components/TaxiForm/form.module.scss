@@ -3,10 +3,11 @@
   height: 500px;
   width: 612px;
   display: flex;
-  background: white;
+  background: #fff;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 50;
 }
 
 .left {
@@ -92,7 +93,9 @@
 }
 
 .button:hover {
-  background: #333;
+  background: var(--dopolnitelno-light-yellow);
+  color: #000;
+  transition: 0.5s;
 }
 
 .status {

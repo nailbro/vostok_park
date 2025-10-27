@@ -1,15 +1,6 @@
-:root {
-    --bg-color: #f3f0e7;
-    --text-color: #1a1a1a;
-    --accent-color: #1a1a1a;
-    --hover-bg: #fff;
-    --border-color: #d8d8d8;
-    --shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
 .faqSection {
     background-color: var(--bg-color);
-    padding: 50px 25px;
+    padding: 30px 0;
     max-width: 100%;
     border-radius: 16px;
     box-shadow: var(--shadow);
@@ -18,11 +9,12 @@
 }
 
 .title {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 32px;
     text-align: center;
-    font-size: 26px;
-    font-weight: 700;
-    margin-bottom: 35px;
-    color: var(--text-color);
+    color: var(--osnovnye-black);
+    margin-bottom: 50px;
 }
 
 .list {
@@ -37,15 +29,16 @@
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-
 .question {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 22px;
+    color: var(--osnovnye-black);
     width: 100%;
     background: none;
     border: none;
     padding: 18px 0;
-    font-size: 16px;
     text-align: left;
-    color: var(--text-color);
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -85,23 +78,28 @@
 }
 
 .bottom {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 22px;
     text-align: center;
+    color: var(--osnovnye-black);
     margin-top: 40px;
-    color: var(--text-color);
     opacity: 0.9;
 }
 
 .button {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 22px;
+    text-align: center;
+    color: var(--osnovnye-white);
     width: 1000px;
     margin-top: 14px;
     background-color: #000;
-    color: white;
     border: none;
     padding: 14px 36px;
     border-radius: 10px;
     cursor: pointer;
-    font-size: 15px;
-    font-weight: 500;
     transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
 }
 
@@ -111,9 +109,24 @@
     background-color: #fff;
     color: #000;
 }
+
 .arrow {
-  width: 20px;
-  height: 20px;
-  color: #000;
-  transition: transform 0.3s ease, color 0.2s ease;
+    width: 20px;
+    height: 20px;
+    color: #000;
+    transition: transform 0.3s ease, color 0.2s ease;
+}
+
+@media(max-width:834px){
+    .faqSection{
+        .list{
+            width: 90%;
+        }
+        .button{
+            width: 90%;
+        }
+        .bottom{
+            font-size: 18px;
+        }
+    }
 }
