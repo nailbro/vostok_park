@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
@@ -14,15 +13,12 @@ interface DepositVideo {
 }
 
 const videos: DepositVideo[] = [
-  // { src: "/videos/qiwi.mp4", thumbnail: "/videos/qiwi.png" },
-  // { src: "/videos/mbank.mp4", thumbnail: "/videos/mbank.png" },
-  // { src: "/videos/optima.mp4", thumbnail: "/videos/optima.png" },
-  { thumbnail: "/videos/photo.png", src: "/videos/photo.mp4" },
-  { thumbnail: "/videos/control.png", src: "/videos/control.mp4" },
-  { thumbnail: "/videos/photo.png", src: "/videos/control.mp4" },
-  { thumbnail: "/videos/control.png", src: "/videos/control.mp4" },
-  { thumbnail: "/videos/photo.png", src: "/videos/photo.mp4" },
-  { thumbnail: "/videos/control.png", src: "/videos/control.mp4" },
+  { thumbnail: "/videos/Мбанк Умай.png", src: "/videos/photo.mp4" },
+  { thumbnail: "/videos/Мбанк Оной.png", src: "/videos/control.mp4" },
+  { thumbnail: "/videos/Мегапей.png", src: "/videos/control.mp4" },
+  { thumbnail: "/videos/Мбанк.png", src: "/videos/control.mp4" },
+  { thumbnail: "/videos/Оной.png", src: "/videos/photo.mp4" },
+  { thumbnail: "/videos/Pay24.png", src: "/videos/control.mp4" },
 ];
 
 export default function Cash() {
@@ -74,19 +70,6 @@ export default function Cash() {
                 className={styles.video}
                 preload="metadata"
               />
-              <div className={styles.overlay}>
-                <div className={styles.playButton}>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="white"
-                    viewBox="0 0 24 24"
-                    width="48"
-                    height="48"
-                  >
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-              </div>
             </div>
           </SwiperSlide>
         ))}

@@ -1,68 +1,118 @@
-.section {
-  padding: 70px 40px;
-  background: #fff;
-  text-align: center;
+.our { 
+  padding: 50px 0 0 0;
+  width: 100%;
+  max-width: 1312px;
+  margin: 0 auto;
 
-}
-
-.title {
-  font-size: 28px;
-  font-weight: 600;
-  margin-bottom: 50px;
-  color: #111;
-}
-
-.content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 118px;
-  align-items: start;
-}
-
-.card {
-  display: flex;
-  align-items: center;
-  text-align: start;
-  gap: 10px;
-}
-
-.icon {
-  border-radius: 10px;
-  background: var(--dopolnitelno-light-yellow);
-  width: 48px;
-  height: 48px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-.cardTitle {
-  font-family: var(--font-family);
-  font-weight: 500;
-  font-size: 22px;
-  text-align: center;
-  color: var(--osnovnye-black);
-}
-
-.desc {
-  font-family: var(--font-family);
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 120%;
-  color: var(--osnovnye-black);
-  line-height: 1.4;
-}
-
-@media (max-width: 834px) {
-  .section {
-    padding: 60px 10px;
+  h2 {
+    text-align: center;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 120%;
   }
 
-  .grid {
-    gap: 30px;
+  .content {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+
+    .start,
+    .sale {
+      display: flex;
+
+      .text {
+        padding-left: 10px;
+
+        span {
+          font-family: "Noto Sans", sans-serif;
+          font-weight: 500;
+          font-size: 22px;
+          line-height: 100%;
+          color: #1E1E1E;
+        }
+
+        p {
+          font-family: "Noto Sans", sans-serif;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 120%;
+          color: #1E1E1E;
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+
+  .sales {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 186px;
+    flex-wrap: wrap;
+
+    .sale {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      .text {
+        padding-left: 10px;
+        span {
+          font-family: "Noto Sans", sans-serif;
+          font-weight: 500;
+          font-size: 22px;
+          line-height: 100%;
+          color: #1E1E1E;
+        }
+
+        p {
+          font-family: "Noto Sans", sans-serif;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 120%;
+          color: #1E1E1E;
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    padding: 50px 20px 0 20px;
+    h2 { font-size: 26px; line-height: 110%; }
+    .content, .sales { gap: 20px; }
+    .start, .sale { 
+      .text { 
+        span { font-size: 18px; } 
+        p { font-size: 16px; } 
+      } 
+    }
+  }
+
+  @media (max-width: 665px) {
+    .content {
+      padding-left: 10%;
+flex-direction: column;
+    }
+    .sales{
+      padding-left: 10%;
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .content, .sales {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    .start, .sale {
+      width: 100%;
+      .text {
+        span { font-size: 16px; }
+        p { font-size: 14px; }
+      }
+    }
   }
 }

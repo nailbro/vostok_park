@@ -1,86 +1,60 @@
-// "use client";
-
-// import { motion } from "framer-motion";
-// import styles from "./advantages.module.scss";
-// import { advantages } from "@/shared/mocks/lang/AdvanatgesMocks";
-// import { useLanguage } from "@/features/context/LanguageContext";
-
-
-// export default function AdvantagesSection() {
-//   const {lang}=useLanguage()
-//   return (
-//     <section id="1" className={styles.section}>
-//       <motion.h2
-//         className={styles.title}
-//         initial={{ opacity: 0, y: 20 }}
-//         whileInView={{ opacity: 1, y: 0 }}
-//         viewport={{ once: true }}
-//         transition={{ duration: 0.6 }}>
-//         {lang==="ru"?"Наши преимущества":"Биздин артыкчылыктар"}
-//       </motion.h2>
-//       <div className={styles.content}>
-//         {advantages.map((item, i) => (
-//           <motion.div
-//             key={i}
-//             className={styles.card}
-//             initial={{ opacity: 0, y: 30 }}
-//             whileInView={{ opacity: 1, y: 0 }}
-//             viewport={{ once: true }}
-//             transition={{ duration: 0.5, delay: i * 0.15 }}>
-//             <div className={styles.icon}>{item.icon}</div>
-//             <div>
-//               <h3 className={styles.cardTitle}>{item.title}</h3>
-//               <p className={styles.desc}>{item.desc}</p>
-//             </div>
-//           </motion.div>
-//         ))}
-//       </div>
-//     </section>
-//   );
-// }
-
-"use client";
-
-import { motion } from "framer-motion";
-import styles from "./advantages.module.scss";
-import { advantages } from "@/shared/mocks/lang/AdvanatgesMocks";
-import { useLanguage } from "@/features/context/LanguageContext";
-
-export default function AdvantagesSection() {
-  const { lang } = useLanguage();
+"use client"
+import Image from 'next/image'
+import styles from './advantages.module.scss'
+import energy from '@public/icons/Flash.svg'
+import clock from '@public/icons/Clock.svg'
+import commision from '@public/icons/Commission.svg'
+import Star from '@public/icons/Star.svg'
+import Question from '@public/icons/Question.svg'
+import { useLanguage } from '@/features/context/LanguageContext'
+const Advantages = () => {
+   const {lang}=useLanguage()
   return (
-    <section id="1" className={styles.section}>
-      <motion.h2
-        className={styles.title}
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
-        {lang === "ru" ? "Наши преимущества" : "Биздин артыкчылыктар"}
-      </motion.h2>
-      <div className={styles.content}>
-        {advantages.map((item, i) => {
-          const data = lang === "ru" ? item.ru : item.kgz;
-          return (
-            <motion.div
-              key={i}
-              className={styles.card}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.15 }}
-              whileHover={{ scale: 1.05 }}
-            >
-              <div className={styles.icon}>{item.icon}</div>
-              <div>
-                <h3 className={styles.cardTitle}>{data.title}</h3>
-                <p className={styles.desc}>{data.desc}</p>
-              </div>
-            </motion.div>
-          );
-        })}
-      </div>
+    <section className={styles.our}>
+<h2>{lang === "ru" ? "Наши преимущества" : "Биздин артыкчылыктар"}</h2>
+<div className={styles.content}>
+<div className={styles.start}>
+<Image src={energy} alt='energe' />
+<div className={styles.text}>
+<span>{lang === "ru" ? "Быстрый старт" : "Тез старт"}</span>
+<p>{lang === "ru" ? "От заявки до первого клиента — несколько часов" : "Өтүнмөдөн алгачкы кардарга чейин — бир нече саат"}</p>
+</div>
+</div>
+<div className={styles.start}>
+    <Image src={clock}alt='clock'/>
+<div className={styles.text}>
+<span>{lang === "ru" ? "Удобный график" : "Ыңгайлуу иш графиги"}</span>
+<p>{lang === "ru" ? "Работайте несколько часов в день или полную смену" : "Күнүнө бир нече саат же толук нөөмөт иштеңиз"}</p>
+</div>
+</div>
+<div className={styles.start}>
+    <Image src={commision} alt='commision'/>
+<div className={styles.text}>
+<span>3%</span>
+<p>{lang === "ru" ? "Минимальная комиссия" : "Минималдуу комиссия"}</p>
+</div>
+</div>
+</div>
+<div className={styles.flex}>
+<div className={styles.sales}>
+<div className={styles.sale}>
+    <Image src={Star} alt='star'/>
+<div className={styles.text}>
+<span>{lang === "ru" ? "Акции" : "Акциялар"}</span>
+<p>{lang === "ru" ? "Бонусные подарки каждую неделю" : "Ар жума бонустук белектер"}</p>
+</div>
+</div>
+<div className={styles.sale}>
+    <Image src={Question} alt='question'/>
+<div className={styles.text}>
+<span>24/7</span>
+<p>{lang === "ru" ? "Техническая поддержка" : "Техникалык колдоо"}</p>
+</div>
+</div>
+</div>
+</div>
     </section>
-  );
+  )
 }
+
+export default Advantages;

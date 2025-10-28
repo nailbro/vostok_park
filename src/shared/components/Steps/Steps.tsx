@@ -29,7 +29,6 @@ const steps = [
 
 export default function StepsSection() {
   const { lang } = useLanguage();
-
   return (
     <section id="steps" className={styles.section}>
       <motion.h2

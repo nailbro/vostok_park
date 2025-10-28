@@ -1,72 +1,133 @@
-"use client";
-
-import React from "react";
-import styles from "./footer.module.scss";
-import { FaWhatsapp, FaTelegramPlane, FaTiktok, FaInstagram } from "react-icons/fa";
-import { useLanguage } from "@/features/context/LanguageContext";
+'use client'
+import Image from 'next/image';
+import styles from './footer.module.scss';
+import apple from '@public/icons/_Group_.svg';
+import play from '@public/icons/Group (4).svg';
+import whatsapp from '@public/icons/WhatsApp.svg'
+import telegram from '@public/icons/Telegram.svg'
+import tiktok from '@public/icons/TikTok.svg'
+import instagram from '@public/icons/Instagram.svg'
+import { FaInstagram, FaLongArrowAltUp, FaTelegram, FaTiktok, FaWhatsapp } from 'react-icons/fa';
+import { useEffect, useState } from 'react';
+import { useLanguage } from '@/features/context/LanguageContext';
 
 const Footer: React.FC = () => {
+  const [showMobileButton, setShowMobileButton] = useState(false);
+  const [hovered, setHovered] = useState<string | null>(null);
     const { lang, setLang } = useLanguage();
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
-    const scrollToTop = () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowMobileButton(window.scrollY > 300);
     };
 
-    return (
-        <footer id="4" className={styles.footer}>
-            <div className={styles.container}>
-                <div className={styles.content}>
-                    <div className={styles.top}>
-                        <div className={styles.left}>
-                        <h3 className={styles.title}>{lang === "ru" ? "Скачайте приложение" : "Тиркемени жүктөп алыңыз"}</h3>
-                        <div className={styles.storeButtons}>
-                            <a
-                                href="https://apps.apple.com/us/app/yandex-go-taxi-food-market/id472650686"
-                                target="_blank"
-                                rel="noopener noreferrer">
-                                <img src="/icons/appStore.png" alt="App Store" />
-                            </a>
-                            <a
-                                href="https://play.google.com/store/apps/details?id=ru.yandex.taxi"
-                                target="_blank"
-                                rel="noopener noreferrer">
-                                <img src="/icons/GooglePlay .png" alt="Google Play" />
-                            </a>
-                        </div>
-                        <hr className={styles.divider} />
-                    </div>
-                    <div className={styles.right}>
-                        <div className={styles.socials}>
-                            <a href="https://wa.me/996" className={`${styles.icon} ${styles.whatsapp}`}>
-                                <FaWhatsapp />
-                            </a>
-                            <a href="https://t.me/" className={styles.icon}>
-                                <FaTelegramPlane />
-                            </a>
-                            <a href="https://www.tiktok.com/" className={styles.icon}>
-                                <FaTiktok />
-                            </a>
-                            <a href="https://www.instagram.com/" className={styles.icon}>
-                                <FaInstagram />
-                            </a>
-                        </div>
-                        <button className={styles.toTop} onClick={scrollToTop}>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 6L12.7071 5.29289L12 4.58579L11.2929 5.29289L12 6ZM11 18C11 18.5523 11.4477 19 12 19C12.5523 19 13 18.5523 13 18L11 18ZM16.7071 9.29289L12.7071 5.29289L11.2929 6.70711L15.2929 10.7071L16.7071 9.29289ZM11.2929 5.29289L7.29289 9.29289L8.70711 10.7071L12.7071 6.70711L11.2929 5.29289ZM11 6L11 18L13 18L13 6L11 6Z" fill="#1E1E1E" />
-                            </svg></button>
-                    </div>
-                    </div>
-                    <div className={styles.bottom}>
-                        <p className={styles.disclaimer}>
-                            <span>{lang === "ru" ? "App Store является знаком обслуживания компании Apple Inc." : "App Store Apple Inc. компаниясынын кызмат көрсөткөн белгиси болуп саналат"}</span> <br />
-                            <span> {lang === "ru" ? "Google Play и логотип Google Play являются товарными знаками корпорации Google LLC." : " Google Play жана Google Play логотиби Google LLC корпорациясынын товар белгиси болуп эсептелет"}</span>
-                        </p>
-                        <p className={styles.copy}>©2024 Восток Парк</p>
-                    </div>
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <footer id='4' className={styles.footer}>
+      <div className={styles.contend}>
+        <div className={styles.flex}>
+          <div className={styles.download}>
+         <h3 className={styles.title}>{lang === "ru" ? "Скачайте приложение" : "Тиркемени жүктөп алыңыз"}</h3>
+            <div className={styles.Badges}>
+              <a href="https://apps.apple.com/app/idYOUR_APP_ID" target="_blank" rel="noopener noreferrer" className={styles.app_store}>
+                <Image src={apple} alt="App Store" />
+                <div className={styles.text}>
+                  <span>Загрузите в</span>
+                  <h4>App Store</h4>
                 </div>
+              </a>
+              <a href="https://play.google.com/store/apps/details?id=YOUR_APP_PACKAGE" target="_blank" rel="noopener noreferrer" className={styles.google_play}>
+                <Image src={play} alt="Google Play" />
+                <div className={styles.text}>
+                  <span>СКАЧАТЬ ИЗ</span>
+                  <h4>Google Play</h4>
+                </div>
+              </a>
             </div>
-        </footer>
-    );
+          </div>
+
+          <div className={styles.Socials}>
+            <div
+              className={styles.social}
+              onMouseEnter={() => setHovered('whatsapp')}
+              onMouseLeave={() => setHovered(null)}
+            >
+                <a href="https://wa.me/996" className={styles.a}>
+              {hovered === 'whatsapp' ? (
+                <Image src={whatsapp} alt="WhatsApp" width={32} height={32} />
+              ) : (
+                <FaWhatsapp size={32} />
+              )}
+              </a>
+            </div>
+
+            <div
+              className={styles.social}
+              onMouseEnter={() => setHovered('telegram')}
+              onMouseLeave={() => setHovered(null)}
+            >
+                <a href="https://t.me/" className={styles.a}>
+              {hovered === 'telegram' ? (
+                <Image src={telegram} alt="Telegram" width={32} height={32} />
+              ) : (
+                <FaTelegram size={32} />
+              )}
+              </a>
+            </div>
+
+            <div
+              className={styles.social}
+              onMouseEnter={() => setHovered('tiktok')}
+              onMouseLeave={() => setHovered(null)}
+            >
+                <a href="https://www.tiktok.com/" className={styles.a}>
+              {hovered === 'tiktok' ? (
+                <Image src={tiktok} alt="TikTok" width={32} height={32} />
+              ) : (
+                <FaTiktok size={32} />
+              )}
+              </a>
+            </div>
+
+            <div
+              className={styles.social}
+              onMouseEnter={() => setHovered('instagram')}
+              onMouseLeave={() => setHovered(null)}
+            >
+                <a href="https://www.instagram.com/" className={styles.a}>
+              {hovered === 'instagram' ? (
+                <Image src={instagram} alt="Instagram" width={32} height={32} />
+              ) : (
+                <FaInstagram size={32} />
+              )}
+              </a>
+            </div>
+          </div>
+
+          <div className={styles.Anchor}>
+            <button onClick={scrollToTop} className={styles.desktopTopButton}>
+            {lang === "ru" ? "Наверх" : "Жогоруга"}<FaLongArrowAltUp size={12} />
+            </button>
+          </div>
+        </div>
+
+        <div className={styles.diviler}></div>
+        <div className={styles.text2}>
+               <p className={styles.disclaimer}>
+                            <span>{lang === "ru" ? "App Store является знаком обслуживания компании Apple Inc." : "App Store Apple Inc. компаниясынын кызмат көрсөткөн белгиси болуп саналат"}</span> <br />
+                           <span> {lang === "ru" ? "Google Play и логотип Google Play являются товарными знаками корпорации Google LLC." : " Google Play жана Google Play логотиби Google LLC корпорациясынын товар белгиси болуп эсептелет"}</span>
+                       </p>
+          <span className={styles.copy}>©2024 Восток Парк</span>
+        </div>
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;
