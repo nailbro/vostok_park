@@ -13,12 +13,12 @@ interface DepositVideo {
 }
 
 const videos: DepositVideo[] = [
-  { thumbnail: "/videos/Мбанк Умай.png", src: "/videos/photo.mp4" },
-  { thumbnail: "/videos/Мбанк Оной.png", src: "/videos/control.mp4" },
-  { thumbnail: "/videos/Мегапей.png", src: "/videos/control.mp4" },
-  { thumbnail: "/videos/Мбанк.png", src: "/videos/control.mp4" },
-  { thumbnail: "/videos/Оной.png", src: "/videos/photo.mp4" },
-  { thumbnail: "/videos/Pay24.png", src: "/videos/control.mp4" },
+  { thumbnail: "/img/Мбанк Умай.png", src: "/videos/photo.mp4" },
+  { thumbnail: "/img/Мбанк Оной.png", src: "/videos/control.mp4" },
+  { thumbnail: "/img/Мегапей.png", src: "/videos/control.mp4" },
+  { thumbnail: "/img/Мбанк.png", src: "/videos/control.mp4" },
+  { thumbnail: "/img/Оной.png", src: "/videos/photo.mp4" },
+  { thumbnail: "/img/Pay24.png", src: "/videos/control.mp4" },
 ];
 
 export default function Cash() {
